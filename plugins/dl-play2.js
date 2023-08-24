@@ -52,6 +52,6 @@ if (size.includes('GB')) return m.reply(`*YT-DL*\n\n▢ *⚖️Size* : ${size}\n
 }
 handler.help = ['play']
 handler.tags = ['dl']
-handler.command = ['play', 'playvid']
+handler.command = ['play', 'song']
 
 export default handler
