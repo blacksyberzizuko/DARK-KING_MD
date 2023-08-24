@@ -28,7 +28,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
 ┣❍ ⌚ *Duration:* ${vid.timestamp}
 ┣❍ 👀 *Views:* ${vid.views}
 ┣──────────────❍
-┃©ʙʏ Qᴜᴇᴇɴ-ꜱᴀᴋᴜʀᴀ
+\n┃©ʙʏ Qᴜᴇᴇɴ-ꜱᴀᴋᴜʀᴀ
 ┗━━━━━━━━━━━━━━❍
 *Downloading And Uploading Song*`
 conn.sendFile(m.chat, vid.thumbnail, 'play', play, m, null, rpig)
@@ -41,7 +41,7 @@ if (size.includes('GB')) return m.reply(`*YT-DL*\n\n▢ *⚖️Size* : ${size}\n
 ┣❍ *📌Tile* : ${title}
 ┣❍ *🎞️Calidad* : ${q}
 ┣❍ *⚖️Size* : ${size}
-┣❍ ©ʙʏ Qᴜᴇᴇɴ-ꜱᴀᴋᴜʀᴀ
+\n┣❍ ©ʙʏ Qᴜᴇᴇɴ-ꜱᴀᴋᴜʀᴀ
 ┗━━━━━━━❍
 `.trim(), m, false, { mimetype: isVideo ? '' : 'audio/mpeg', asDocument: chat.useDocument })
 		m.react(done) 
