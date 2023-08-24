@@ -27,11 +27,11 @@ global.APIKeys = { // APIKey Here
 // Sticker WM
 global.packname = 'QUEEN-SAKURA-MD' 
 global.author = '@dark-legend-hyper' 
-global.fgig = '▢ Sígueme en Instagram\nhttps://www.instagram.com/fg98_ff\n' 
-global.dygp = 'https://chat.whatsapp.com/IO9jmpI72ejHiN4unRZleU'
-global.fgsc = 'https://github.com/FG98F/dylux-fg' 
-global.fgyt = 'https://youtube.com/fg98f'
-global.fgpyp = 'https://paypal.me/fg98f'
+global.fgig = '👸 Sígueme en Github\nhttps://github.com/blacksyberzizuko\n' 
+global.dygp = 'https://chat.whatsapp.com/FYPYqeucaxr4qwME8G6Tot'
+global.fgsc = 'https://github.com/blacksyberzizuko' 
+global.fgyt = 'https://youtube.com'
+global.fgpyp = 'https://paypal.me'
 global.fglog = 'https://i.imgur.com/Owmb93c.png' 
 
 global.wait = '*⌛ _loading..._*\n*▰▰▰▱▱▱▱▱*'
