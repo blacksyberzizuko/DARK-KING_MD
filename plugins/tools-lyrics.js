@@ -5,10 +5,10 @@ let handler = async (m, {conn, text }) => {
    if (!teks) throw `✳️ Ingresa el título de una canción`
    try {
  let res = await fg.lyrics(text);
- let mes = `▢ *${res.title}*
-▢ *${res.artist}*
+ let mes = `🎀 *${res.title}*
+⚡ *${res.artist}*
 
-▢ ${res.lyrics}`;
+🔱 ${res.lyrics}`;
     conn.sendFile(m.chat, res.thumb, 'img.png', mes, m);
 } catch (e) {
 	m.react(error)
