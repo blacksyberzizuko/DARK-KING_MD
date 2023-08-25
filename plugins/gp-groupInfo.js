@@ -7,39 +7,41 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
     const listAdmin = groupAdmins.map((v, i) => `${i + 1}. @${v.id.split('@')[0]}`).join('\n')
     const owner = groupMetadata.owner || groupAdmins.find(p => p.admin === 'superadmin')?.id || m.chat.split`-`[0] + '@s.whatsapp.net'
     let text = `
-┌──「 *INFO DE GRUPO* 」
-▢ *♻️ID:*
+┌⚋⚋⚋「 *GROUP-INFORM* 」⚋⚋⚋❍
+┗⚋⚋⚋⚋⚋⚋⚋⚋❍
+👸 ❍ Qᴜᴇᴇɴ-ꜱᴀᴋᴜʀᴀ-ᴍᴅ
+👩‍💻 *🔖GROUP-ID:*
    • ${groupMetadata.id}
-▢ *🔖Nombre* : 
+🍃 *🏷️NUMBER* : 
 • ${groupMetadata.subject}
-▢ *👥Miembros* :
+🪀 *👥MEMBERS* :
 • ${participants.length}
-▢ *🤿Dueño de Grupo:*
+🔱 *🤿Owner the group:*
 • @${owner.split('@')[0]}
-▢ *🕵🏻‍♂️Admins:*
+👸 *🕵🏻‍♂️Admins:*
  ${listAdmin}
-▢ *🪢 Configuración de grupo:*
-• ${isBanned ? '✅' : '❎'} Baneado
-• ${welcome ? '✅' : '❎'} Bienvenida
-• ${detect ? '✅' : '❎'} Detector
-• ${del ? '❎' : '✅'} Anti Delete
-• ${antiLink ? '✅' : '❎'} Anti Link WhatsApp
+⚡ *🔖 group configuration:*
+🔱 ${isBanned ? '✅' : '❎'} *Banned*
+🔱 ${welcome ? '✅' : '❎'} *Welcome*
+🔱 ${detect ? '✅' : '❎'} *Detector*
+🔱 ${del ? '❎' : '✅'} *Anti Delete*
+🔱 ${antiLink ? '✅' : '❎'} *Anti Link WhatsApp*
 
-*▢  📬 Configuración de mensajes:*
-• Bienvenida: ${sWelcome}
-• Despedida: ${sBye}
-• Promovidos: ${sPromote}
-• Degradados: ${sDemote}
+*🔖 message settings:*
+🎀 Welcome: ${sWelcome}
+🎀  Farewell:group configuration ${sBye}
+🎀 Promoted: ${sPromote}
+🎀 Demote: ${sDemote}
 
-▢ *📌Descripción* :
-   • ${groupMetadata.desc?.toString() || 'desconocido'}
+⚡ *📌Descripción* :
+   🧬 ${groupMetadata.desc?.toString() || 'a stranger'}
 `.trim()
     conn.sendFile(m.chat, pp, 'pp.jpg', text, m, false, { mentions: [...groupAdmins.map(v => v.id), owner] })
 }
 
 handler.help = ['infogp']
 handler.tags = ['group']
-handler.command = ['infogrupo', 'groupinfo', 'infogp'] 
+handler.command = ['infogrupo', 'groupinfo', 'inform'] 
 handler.group = true
 
 export default handler
