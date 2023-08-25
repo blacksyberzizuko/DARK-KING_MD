@@ -31,17 +31,17 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
 \n┃©ʙʏ Qᴜᴇᴇɴ-ꜱᴀᴋᴜʀᴀ
 ┗━━━━━━━━━━━━━━❍
 *Downloading And Uploading Song*`
-conn.sendFile(m.chat, vid.thumbnail, 'play', play, m, null, rpig)
+conn.sendFile(m.chat, vid.thumbnail, 'song', play, m, null, rpig)
 
 if (size.split('MB')[0] >= limit) return m.reply(`*YT-DL*\n\n▢ *⚖️Size* : ${size}\n▢ *🎞️Calidad* : ${q}\n\n▢ _The file exceeds the download limit_ *+${limit} MB*`) 
 if (size.includes('GB')) return m.reply(`*YT-DL*\n\n▢ *⚖️Size* : ${size}\n▢ *🎞️Calidad* : ${q}\n\n▢ _File exceeds download limit_ *+${limit} MB*`)   
 	  conn.sendFile(m.chat, dl_url, title + '.mp' + (3 + /vid$/.test(command)), `
-┏━━━❍ *YT-DL* ❍━━━
+┏━━━❍ *Sakura-Yt* ❍━━━
 ┣❍ 
-┣❍ *📌Tile* : ${title}
+┣❍ *🎀Tile* : ${title}
 ┣❍ *🎞️Calidad* : ${q}
 ┣❍ *⚖️Size* : ${size}
-\n┣❍ ©ʙʏ Qᴜᴇᴇɴ-ꜱᴀᴋᴜʀᴀ
+┣❍ ©ʙʏ Qᴜᴇᴇɴ-ꜱᴀᴋᴜʀᴀ
 ┗━━━━━━━❍
 `.trim(), m, false, { mimetype: isVideo ? '' : 'audio/mpeg', asDocument: chat.useDocument })
 		m.react(done) 
