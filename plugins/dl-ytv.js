@@ -15,7 +15,7 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
 		const title = await yt.title
 		const size = await yt.video[q].fileSizeH 
 		
-       if (size.split('MB')[0] >= limit) return m.reply(` ≡  *FG YTDL*\n\n▢ *⚖️Peso* : ${size}\n▢ *🎞️Calidad* : ${q}\n\n▢ _El archivo supera el límite de descarga_ *+${limit} MB*`)    
+       if (size.split('MB')[0] >= limit) return m.reply(` ≡  *Sakura-Yt*\n\n▢ *⚖️Peso* : ${size}\n▢ *🎞️Calidad* : ${q}\n\n▢ _El archivo supera el límite de descarga_ *+${limit} MB*`)    
 	  conn.sendFile(m.chat, dl_url, title + '.mp4', `
  👸 *Sakura-Yt* 👸
   
@@ -23,7 +23,7 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
 ❍ *📟 Ext* : mp4
 ❍ *🎞️Calidad* : ${q}
 ❍ *⚖️Size* : ${size}
-`.trim(), m, false, { asDocument: chat.useDocument })
+`.trim(), m, false, { asvideo: chat.usevideo })
 		m.react(done) 
 		
 	} catch {	
