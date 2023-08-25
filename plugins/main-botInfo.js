@@ -42,50 +42,46 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   let speed = neww - old
   
 let infobt = `
-≡ *INFO BOT*
-  
-*ESTADO*
-▢ *${groupsIn.length}* Chats de grupo
-▢ *${groupsIn.length}* Gropos unidos
-▢ *${groupsIn.length - groupsIn.length}* Grupos abandonados
-▢ *${chats.length - groupsIn.length}* Chats privados
-▢ *${chats.length}* Total Chats
+┏⚋⚋⚋⚋⚋❬ *INFO BOT* ❭⚋⚋⚋⚋❍
+┗⚋⚋⚋⚋⚋⚋⚋⚋⚋❍  
+👸 *BOT-INFORM* 👸
+🔖 *${groupsIn.length}* *CHAT-GROUPS*
+🔖 *${groupsIn.length}* *GROUPS*
+🔖 *${groupsIn.length - groupsIn.length}* *TOTAL*
+🔖 *${chats.length - groupsIn.length}* *PRIVATE-CHAT*
+🔖 *${chats.length}* *TOTAL-CHAT*
 
-*≡ OWNER*
-  *FG98*
-▢ Instagram :
-  • https://instagram.com/fg98_ff
-▢ WhatsApp :
-  • (escribe solo si es necesario) 
-▢ GitHub :
-  • https://github.com/FG98F
-▢ Telegram : 
-  • t.me/fgsupp_bot (FG) 
-  • t.me/fg98ff (canal)
-  • t.me/fgawgp (grupo)
-▢ YouTube : 
-  • https://youtube.com/fg98f
+👸 *CREATOR-OF-SAKURA* 👸
+ 🎀 *DARK-LEGEND-HYPER*
+⚡ *TELEGRAM :*
+  🎀 https://t.me/DARK_LEGEND_HYPER
+🏷️ *WhatsApp :*
+  🎀 https://api.whatsapp.com/send?phone=+94770378874 
+👩‍💻 *GitHub :*
+  🎀 https://github.com/blacksyberzizuko
+🍃 *YouTube :*
+  🎀 https://youtube.com
   
- *≡ HELPERS*
-  *CRISS*
-▢ Instagram : https://www.instagram.com/sayurizuniga3
-▢ WhatsApp : wa.me/
-  *ANDREA*
-▢ Instagram : https://
-▢ WhatsApp : wa.me/573125484672
+┏⚋⚋❬👸 *QUEEN-SAKURA-TEAM* 👸❭⚋⚋❍
+┗⚋⚋⚋⚋⚋⚋⚋⚋⚋⚋❍
+  🔱 *M.R HANSAMALA*
+  🔱 *M.R.S CHAMATHKA*
+  🔱 *DARKWINZO*
 
- *≡ S E R V E R*
+┏⚋⚋⚋❬👸 *DEPLOYING-INFORM* 👸❭⚋⚋⚋❍
+┗⚋⚋⚋⚋⚋⚋⚋⚋⚋⚋❍
 *🛑 RAM:* ${format(totalmem() - freemem())} / ${format(totalmem())}
 *🔵 FreeRAM:* ${format(freemem())}
 
-*≡  NodeJS Uso de memoria*
+┏⚋⚋⚋⚋❬⚡ *NODE.JS-MEMORY* ⚡❭⚋⚋⚋❍
+┗⚋⚋⚋⚋⚋⚋⚋⚋⚋⚋❍
 ${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v => v.length)), ' ')}: ${format(used[key])}`).join('\n') + '```'}
 `
 m.reply(infobt)
 
 }
-handler.help = ['info']
+handler.help = ['Sakura']
 handler.tags = ['main']
-handler.command = ['info', 'infobot', 'botinfo']
+handler.command = ['Sakura', 'infobot', 'botinfo']
 
 export default handler
