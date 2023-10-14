@@ -28,29 +28,28 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-┏━━━━━━┃👸Qᴜᴇᴇɴ-ꜱᴀᴋᴜʀᴀ👸┃━━━━━━❍
-┃┏━━━━━┻⚋⚋⚋⚋⚋⚋♢⚋⚋⚋⚋⚋┻━━━❍
-┃┃👋 *HI* : *%name*
-┃┣━━━━━━━━━━━━❍
-┃┃🎀 *Level*     : *%level* 
-┃┃🔱 *Users*     : *%totalreg*
-┃┃⏳ *Run Time* : *%muptime*
-┃┃👸 *Bot Name* : *QUEEN-SAKURA*
-┃┃👩‍💻 *Creator*    : *Dark-Legend-Hyper*
-┃┃⚡ *Nice To Meet You* *%name* 👸
-┃┃© ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ Qᴜᴇᴇɴ-ꜱᴀᴋᴜʀᴀ-ᴡᴀ_ʙᴏᴛ
-┃┗━━━━━━━━━━━━━━━━━━━━━━━━━❍
-┗━━━━━━━━━━━━━━━━━━━━━━━❍
+*☆: .｡. oQUEEN-SAKURA-MDo .｡.:☆*
+
+*▽* 👋 *HI* : *%name*
+
+*▽* 🎀 *Level*     : *%level* 
+*▽* 🔱 *Users*     : *%totalreg*
+*▽* ⏳ *Run Time* : *%muptime*
+*▽* 👸 *Bot Name* : *QUEEN-SAKURA*
+*▽* 👩‍💻 *Creator*    : *Dark-Legend-Hyper*
+*▽* ⚡ *Nice To Meet You* *%name* 👸
+*▽* © ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ Qᴜᴇᴇɴ-ꜱᴀᴋᴜʀᴀ-ᴡᴀ_ʙᴏᴛ
+
   ┏━━❬ Qᴜᴇᴇɴ-ꜱᴀᴋᴜʀᴀ-ᴄᴏᴍᴍᴀɴᴅ-ʟɪꜱᴛ ❭━━┓
-❍
-❍ 🅿️ = ᴘʀᴇᴍɪᴜᴍ ᴄᴏᴍᴍᴀɴᴅ 
-❍ 🆓 = ꜰʀᴇᴇ ᴜꜱᴇ ᴄᴏᴍᴍᴀɴᴅ
-❍
+*◉_◉*
+*◉_◉*  🅿️ = ᴘʀᴇᴍɪᴜᴍ ᴄᴏᴍᴍᴀɴᴅ 
+*◉_◉*  🆓 = ꜰʀᴇᴇ ᴜꜱᴇ ᴄᴏᴍᴍᴀɴᴅ
+*◉_◉*
 ⚡━━━━━━❬ᴠɪᴘ ᴡʜᴀᴛꜱᴀᴘᴘ-ʙᴏᴛ❭━━━━━━━⚡
  ❬━━━━━━❍ ᴄᴏᴍᴍᴀɴᴅ ʟɪꜱᴛ ❍━━━━━━━❭
 `.trimStart(),
   header: '╭⚋⚋⚋⚋❬ *%category* ❭⚋⚋⚋❍',
-  body: '┣❍ 🔖 *%cmd* %isPremium',
+  body: '*▽* 🔖 *%cmd* %isPremium',
   footer: '┗⚋⚋⚋⚋⚋⚋⚋⚋⚋⚋\n',
   after: `
 `,
