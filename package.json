@@ -32,10 +32,10 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/blacksyberzizuko/QUEEN_SAKURA-MD_V0.0.1.git"
+        "url": "git+https://github.com/blacksyberzizuko/Queen-Elisa_MD.git"
     },
     "bugs": {
-        "url": "https://github.com/blacksyberzizuko/QUEEN_SAKURA-MD_V0.0.1/issues"
+        "url": "https://github.com/blacksyberzizuko/Queen-Elisa_MD/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
