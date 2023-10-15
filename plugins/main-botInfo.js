@@ -64,9 +64,9 @@ let infobt = `
   
 ┏⚋⚋❬👸 *QUEEN-SAKURA-TEAM* 👸❭⚋⚋❍
 ┗⚋⚋⚋⚋⚋⚋⚋⚋⚋⚋❍
-  🔱 *M.R HANSAMALA*
-  🔱 *M.R.S CHAMATHKA*
-  🔱 *DARKWINZO*
+  🔱 *KINDALPHA.OFC*
+  🔱 *GAMING.SACHIYA*
+  🔱 *.....*
 
 ┏⚋⚋⚋❬👸 *DEPLOYING-INFORM* 👸❭⚋⚋⚋❍
 ┗⚋⚋⚋⚋⚋⚋⚋⚋⚋⚋❍
@@ -82,6 +82,6 @@ m.reply(infobt)
 }
 handler.help = ['Sakura']
 handler.tags = ['main']
-handler.command = ['Sakura', 'infobot', 'botinfo']
+handler.command = ['team', 'infobot', 'botinfo']
 
 export default handler
