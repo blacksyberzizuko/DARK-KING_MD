@@ -7,20 +7,27 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
     const listAdmin = groupAdmins.map((v, i) => `${i + 1}. @${v.id.split('@')[0]}`).join('\n')
     const owner = groupMetadata.owner || groupAdmins.find(p => p.admin === 'superadmin')?.id || m.chat.split`-`[0] + '@s.whatsapp.net'
     let text = `
-┌⚋⚋⚋「 *GROUP-INFORM* 」⚋⚋⚋❍
-┗⚋⚋⚋⚋⚋⚋⚋⚋❍
-👸 ❍ Qᴜᴇᴇɴ-ꜱᴀᴋᴜʀᴀ-ᴍᴅ
+*☆: .｡. o📢GROUP-INFORM📢o .｡.:☆* 
+
+🧚‍♀️ Qᴜᴇᴇɴ-ꜱᴀᴋᴜʀᴀ-ᴍᴅ
+☆*: .｡. o♪▽o .｡.:*☆
 👩‍💻 *🔖GROUP-ID:*
    • ${groupMetadata.id}
+   
 🍃 *🏷️NUMBER* : 
 • ${groupMetadata.subject}
+
 🪀 *👥MEMBERS* :
 • ${participants.length}
+
 🔱 *🤿Owner the group:*
 • @${owner.split('@')[0]}
+
 👸 *🕵🏻‍♂️Admins:*
  ${listAdmin}
+ 
 ⚡ *🔖 group configuration:*
+☆*: .｡. o♪▽o .｡.:*☆
 🔱 ${isBanned ? '✅' : '❎'} *Banned*
 🔱 ${welcome ? '✅' : '❎'} *Welcome*
 🔱 ${detect ? '✅' : '❎'} *Detector*
@@ -28,6 +35,7 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
 🔱 ${antiLink ? '✅' : '❎'} *Anti Link WhatsApp*
 
 *🔖 message settings:*
+*☆: .｡. oo .｡.:☆*
 🎀 Welcome: ${sWelcome}
 🎀  Farewell:group configuration ${sBye}
 🎀 Promoted: ${sPromote}
