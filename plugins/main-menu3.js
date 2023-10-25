@@ -46,7 +46,7 @@ let m2 = `
 
     let pp = './src/fg_logo.jpg' 
     conn.sendFile(m.chat, pp, 'menu.jpg', m2, m, null, rpl)
-   
+    m.react('🪀')
 }
 
 handler.help = ['groupmenu']
