@@ -63,8 +63,8 @@ let m2 = `°•°___✘『 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗-𝗠𝗘𝗡𝗨 』
     m.react('📩') 
 }
 
-handler.help = ['help']
+handler.help = ['downloadmenu']
 handler.tags = ['main']
-handler.command = ['help', 'sakura'] 
+handler.command = ['downloadmenu', 'dlmenu'] 
 
 export default handler
