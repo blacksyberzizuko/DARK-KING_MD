@@ -13,7 +13,6 @@ let handler = async (m, { conn }) => {
           let pp = './src/sakura_alive.jpg' 
     conn.sendFile(m.chat, pp, 'menu.jpg', m2, m, null, rpl)
     m.react('🚀') 
-                  }
 }
 handler.help = ['ping']
 handler.tags = ['main']
