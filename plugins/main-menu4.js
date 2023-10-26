@@ -69,9 +69,9 @@ let m2 = `╭╸╸╸[🧚‍♂𝗤𝗨𝗘𝗘𝗡-𝗦𝗔𝗞𝗨𝗥𝗔 �
 ╭🧚‍♂𝗤𝗨𝗘𝗘𝗡-𝗦𝗔𝗞𝗨𝗥𝗔.𝗩1.0*
 ╰╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸╸⦁✣ `
 
-    let pp = './src/fg_logo.jpg' 
+    let pp = './src/sakura_ownermenu.jpg' 
     conn.sendFile(m.chat, pp, 'menu.jpg', m2, m, null, rpl)
-    m.react('🔠') 
+    m.react('🤹‍♀️') 
 }
 
 handler.help = ['ownermenu']
