@@ -28,9 +28,9 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-∇—————————————————————————————⊶  
+∇————————————————————————⊶  
 *☆: .｡. oQUEEN-SAKURA-MDo .｡.:☆*
-∇—————————————————————————————⊶
+∇————————————————————————⊶
  👋 *HI* : *%name*
 *THE BEST WHATSAPP BOT....*
 ╭——————————————————————————————⊶
@@ -42,15 +42,7 @@ const defaultMenu = {
 ╏ ⚡ *Nice To Meet You* *%name* 👸
 ╏ ⚜ *CYBER-BOT_DEMONS_TEAM...*
 ╰——————————————————————————————⊶
-┏━━❬ Qᴜᴇᴇɴ-ꜱᴀᴋᴜʀᴀ-ᴄᴏᴍᴍᴀɴᴅ-ʟɪꜱᴛ ❭━━┓
-╭━━━━━━━━━━━━━━━━✣⦁⦁
-╏╏✘ 🅿️ = ᴘʀᴇᴍɪᴜᴍ ᴄᴏᴍᴍᴀɴᴅ 
-╏╏✘  🆓 = ꜰʀᴇᴇ ᴜꜱᴇ ᴄᴏᴍᴍᴀɴᴅ
-╏╰━━━━━━━❬✘❭━⦁
-╏╭━━━━━━━━━━━━━❬✘❭━⦁
-╏╏⚡━━❬ᴠɪᴘ ᴡʜᴀᴛꜱᴀᴘᴘ-ʙᴏᴛ❭━━━⚡
-╏╏ ❬━━━━◎ ᴄᴏᴍᴍᴀɴᴅ ʟɪꜱᴛ ◎━━━━❭
-╰━━━━━━━━━━━━━━✣⦁⦁⦁
+┏━━❬ Qᴜᴇᴇɴ-ꜱᴀᴋᴜʀᴀ-ᴄᴏᴍᴍᴀɴᴅ-ʟɪꜱᴛ ❭━━┓⦁
 `.trimStart(),
   header: '╭━━━━✘ %category ✘━━✣',
   body: '╏╏ 🔖 *%cmd*',
@@ -119,7 +111,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     let header = conn.menu.header || defaultMenu.header
     let body = conn.menu.body || defaultMenu.body
     let footer = conn.menu.footer || defaultMenu.footer
-    let after = conn.menu.after || (conn.user.jid == conn.user.jid ? '' : `*Powered by* https://wa.me/${conn.user.jid.split`@`[0]}`) + defaultMenu.after
+    let after = conn.menu.after || (conn.user.jid == conn.user.jid ? '' :'*The Queen-Sakura* https://wa.me/${conn.user.jid.split`@`[0]}`) + defaultMenu.after
     let _text = [
       before,
       ...Object.keys(tags).map(tag => {
@@ -155,7 +147,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     
-    let pp = './src/fg_logo.jpg'
+    let pp = './src/sakura_menu.jpg'
      
     conn.sendFile(m.chat, pp, 'menu.jpg', text.trim(), m, null, rpl)
     /*conn.sendButton(m.chat, text.trim(), '▢ DyLux  ┃ ᴮᴼᵀ\n▢ Sígueme en Instagram\nhttps://www.instagram.com/fg98_ff', pp, [
