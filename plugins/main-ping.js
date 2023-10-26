@@ -8,7 +8,10 @@ let handler = async (m, { conn }) => {
          exec(`neofetch --stdout`, (error, stdout, stderr) => {
           let child = stdout.toString("utf-8");
           let ssd = child.replace(/Memory:/, "Ram:");
-          m.react('🚀')        
+          m.react('🚀')
+          let pp = './src/sakura_dlmenu.jpg' 
+    conn.sendFile(m.chat, pp, 'menu.jpg', m2, m, null, rpl)
+         }
           m.reply(`${ssd}👸 *PING_BY-SAKURA* : ${latensi.toFixed(4)} _ms_`);
             });
 }
