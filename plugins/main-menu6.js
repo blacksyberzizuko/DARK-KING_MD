@@ -58,7 +58,7 @@ let m2 = `°•°___✘『 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗-𝗠𝗘𝗡𝗨 』
 🎈𝗗.𝗖.𝗧 ➠ *යුටියුබ් "mp4" බගාත කිරීම් සදහා ...*
 🔥𝗨𝗦𝗘 ➠ .ytmp4 *<link yt>*`
 
-    let pp = './src/fg_logo.jpg' 
+    let pp = './src/sakura_dlmenu.jpg' 
     conn.sendFile(m.chat, pp, 'menu.jpg', m2, m, null, rpl)
     m.react('📩') 
 }
