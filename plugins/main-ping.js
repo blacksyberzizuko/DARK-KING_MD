@@ -9,7 +9,7 @@ let handler = async (m, { conn }) => {
           let child = stdout.toString("utf-8");
           let ssd = child.replace(/Memory:/, "Ram:");
           let pp = './src/sakura_dlmenu.jpg' 
-          conn.sendFile(m.chat, pp, 'menu.jpg', m2, m, null, rpl)
+          conn.sendFile(m.chat, pp, 'menu.jpg', m2, m, null, rpl);
           m.react('🚀')
           m.reply(`${ssd}👸 *PING_BY-SAKURA* : ${latensi.toFixed(4)} _ms_`);
             });
