@@ -1,11 +1,12 @@
 import fetch from 'node-fetch'
-import { youtubedl } from '@bochilteam/scraper-sosmed'
+import { youtubedl } from '@bochilteam/scraper'
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
 	if (!args[0]) throw `Example: ${usedPrefix + command} https://youtu.be/S1--lhvwLsc`
 	if (!args[0].match(new RegExp(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch|v|embed|shorts)(?:\.php)?(?:\?.*v=|\/))([a-zA-Z0-9\_-]+)/, 'gi'))) return m.reply(`Invalid Youtube URL.`)
 	try {
 		let anu = await youtubedl(args[0])
+		m.react('🎶')
 		let data = anu.audio[Object.keys(anu.audio)[0]]
 		let url = await data.download()
 		if (data.fileSize > 400000) return m.reply(`Filesize: ${data.fileSizeH}\nUnable to send, maximum file size is 400 MB`)
@@ -42,7 +43,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 
 handler.help = ['ytmp3 <url>']
 handler.tags = ['dl']
-handler.command = ['ytmp3', 'fgmp3'] 
+handler.command = ['ytmp3', 'mp3'] 
 handler.diamond = true
 
 export default handler
