@@ -47,7 +47,3 @@ handler.command = ['ytmp3', 'mp3']
 handler.diamond = true
 
 export default handler
-
-const somematch = ( data, id ) => {
-	let res = data.find(el => el === id )
-	return res ? true : false};
