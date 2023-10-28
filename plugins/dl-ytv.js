@@ -5,9 +5,9 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
 	if (!args || !args[0]) throw `🌿 Example :\n${usedPrefix + command} https://youtu.be/YzkTFFwxtXI`
     if (!args[0].match(/youtu/gi)) throw `❎ Enter the Valuable Youtube Url`
 	 let chat = global.db.data.chats[m.chat]
-	 m.react(rwait) 
+	 m.react('🎥') 
 	try {
-		let q = args[1] || '360p'
+		let q = args[1] || '720p'
 		let v = args[0]
 		const yt = await youtubedl(v).catch(async () => await youtubedlv2(v))
 		const dl_url = await yt.video[q].download()
@@ -16,8 +16,8 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
 		
        if (size.split('MB')[0] >= limit) return m.reply(` ┏⚋⚋⚋❲ *YOUTUBE* ❳⚋⚋⚋⦁\n\n⦁ *⚖️FILESIZE* : ${size}\n⦁ *🎞️DURATION* : ${q}\n\n⦁ DOWNLOAD LIMIT *+${limit} MB*`)    
 	  conn.sendFile(m.chat, dl_url, title + '.mp4', `
-┏⦁⦁⦁●●❉❲ *YOUTUBE* ❳❉●●⦁⦁⦁
-┗❉●●●⦁⦁⦁⦁⦁⦁  
+✘『𝗦𝗔𝗞𝗨𝗥𝗔-𝗬𝗢𝗨𝗧𝗨𝗕𝗘_𝗗𝗟』✘ 
+
 ⦁ *📝TITLE* : ${title}
 ⦁ *🌿TYPEt* : mp4
 ⦁ *🎞️DURATION* : ${q}
@@ -33,7 +33,7 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
 }
 handler.help = ['ytmp4 <link yt>']
 handler.tags = ['dl'] 
-handler.command = ['ytmp4', 'dlmp4']
-handler.diamond = true
+handler.command = ['ytmp4', 'video']
+handler.diamond = false
 
 export default handler
