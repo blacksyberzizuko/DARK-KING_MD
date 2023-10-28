@@ -1,6 +1,5 @@
 
 import speed from 'performance-now'
-import fetch from 'node-fetch'
 import { spawn, exec, execSync } from 'child_process'
 
 let handler = async (m, { conn }) => {
@@ -9,9 +8,8 @@ let handler = async (m, { conn }) => {
          exec(`neofetch --stdout`, (error, stdout, stderr) => {
           let child = stdout.toString("utf-8");
           let ssd = child.replace(/Memory:/, "Ram:");
-          m.react('🚀')
-          let pp = './src/fg_logo.jpg'      
-          m.reply(`${ssd}👸 *PING_BY-SAKURA* : ${latensi.toFixed(4)} _ms_`);
+          m.react('🚀')     
+          m.reply(`${ssd}🧚‍♂️ *PING_BY-SAKURA* : ${latensi.toFixed(4)} _ms_ \n *2023 NEW WA_BOT...*`);
             });
 }
 handler.help = ['ping']
