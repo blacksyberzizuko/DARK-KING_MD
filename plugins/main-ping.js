@@ -10,6 +10,7 @@ let handler = async (m, { conn }) => {
           let child = stdout.toString("utf-8");
           let ssd = child.replace(/Memory:/, "Ram:");
           m.react('🚀')
+          let pp = './src/fg_logo.jpg'      
           m.reply(`${ssd}👸 *PING_BY-SAKURA* : ${latensi.toFixed(4)} _ms_`);
             });
 }
