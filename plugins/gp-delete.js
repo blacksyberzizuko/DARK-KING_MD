@@ -5,7 +5,7 @@ if (!m.quoted) throw `🗯️ please mention massage... `
 try {
 let delet = m.message.extendedTextMessage.contextInfo.participant
 let bang = m.message.extendedTextMessage.contextInfo.stanzaId
-m.react('🪣')	
+m.react('🗑️')	
 return conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: delet }})
  } catch {
 return conn.sendMessage(m.chat, { delete: m.quoted.vM.key })
