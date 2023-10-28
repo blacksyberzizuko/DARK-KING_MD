@@ -3,14 +3,18 @@ import fg from 'api-dylux'
 let handler = async (m, { conn, args, usedPrefix, command }) => {
  
  if (!args[0]) throw `🎭 Send the link of a Facebook video\n\n📌 Example  :\n*${usedPrefix + command}* https://fb.watch/d7nB8-L-gR/`
-    m.react(rwait)
+    m.react('🎞️')
    try {
     let result = await fg.fbdl(args[0]);
     let tex = `
-┏━━❍┃ *FB-DOWNLOADER*┃━━❍
-┣❍📝 *Tile:* ${result.title}
-┣❍🎭 *BY QUEEN-SAKURA*
-└───────────❍`;
+ ✘ 『 𝗦𝗔𝗞𝗨𝗥𝗔-𝗙𝗕_𝗗𝗟 』 ✘
+ 
+*🎥THE VIDEO TITLE*
+🌀 *${result.title}*
+*FACEBOOK VIDEO DOWNLOADER*
+┏━━━━━━━━━━━━━━━━━━⦂⦁
+┃*🧚‍♂️QUEEN-SAKURA_MD🧚‍♂️*
+┗━━━━━━━━━━━━━━━━━━⦂⦁`;
     conn.sendFile(m.chat, result.videoUrl, 'fb.mp4', tex, m);
     m.react(done);
   } catch (error) {
