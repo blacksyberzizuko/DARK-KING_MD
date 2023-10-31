@@ -44,6 +44,7 @@ let handler = async (m, { conn, participants, groupMetadata }) => {
 ⚡ *📌Descripción* :
    🧬 ${groupMetadata.desc?.toString() || 'a stranger'}
 `.trim()
+    m.react('📚')
     conn.sendFile(m.chat, pp, 'pp.jpg', text, m, false, { mentions: [...groupAdmins.map(v => v.id), owner] })
 }
 
