@@ -2,7 +2,7 @@
 import fetch from 'node-fetch'
 
 let handler = async function (m, { conn, text, usedPrefix }) {
-let handler = async(m, { conn, text, usedPrefix, command }) => {  
+ 
 let m2 = `
 ┏━━━━━❬ＡＬＩＶＥ❭━━━━━━❍
 ┃┏━━━━━━━━━━━━━━━━❍
@@ -31,7 +31,7 @@ let m2 = `
     conn.sendFile(m.chat, pp, 'menu.jpg', m2, m, null, rpl)
     m.react('🧚‍♂️')
 }
-
+let handler = async(m, { conn, text, usedPrefix, command }) => { 
   // Sound
     let name = m.pushName || conn.getName(m.sender)
     var vn = "https://raw.githubusercontent.com/blacksyberzizuko/Suneth/master/Assets/audio/Sad.mp3"
