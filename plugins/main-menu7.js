@@ -19,7 +19,7 @@ let m2 = `*⫹⫺  QUEEN-SAKURA_MD  ⫹⫺*
 
     let pp = './src/sakura_menu.jpg' 
     conn.sendFile(m.chat, pp, 'menu.jpg', m2, m, null, rpl)
-    m.react('🧚‍♂️') 
+    m.react('wait') 
     m.react('♻')
     m.react('👋')
     m.react('📜')
