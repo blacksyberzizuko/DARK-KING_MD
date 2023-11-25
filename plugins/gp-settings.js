@@ -12,6 +12,9 @@ let handler = async function (m, { conn, text }) {
   *🔱 ${usedPrefix + command} open*
 `.trim()
     await conn.groupSettingUpdate(m.chat, isClose)
+ let pp = './src/sakura_menu.jpg' 
+    conn.sendFile(m.chat, pp, 'menu.jpg', m2, m, null, rpl)
+    m.react('🎪')    
 }
 handler.help = ['group *open/close*']
 handler.tags = ['group']
