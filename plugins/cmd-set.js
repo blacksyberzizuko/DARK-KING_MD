@@ -2,12 +2,12 @@
 
 let handler = async (m, { text, usedPrefix, command }) => {
     global.db.data.sticker = global.db.data.sticker || {}
-    if (!m.quoted) throw `✳️Responde a un mensaje con *${usedPrefix + command}*`
-    if (!m.quoted.fileSha256) throw '⚠️ Menciona al mensaje'
-    if (!text) throw `✳️ Falta el comando`
+    if (!m.quoted) throw `♻Reply to a message with *${usedPrefix + command}*`
+    if (!m.quoted.fileSha256) throw '⚠️ mention massage'
+    if (!text) throw `✳️`
     let sticker = global.db.data.sticker
     let hash = m.quoted.fileSha256.toString('base64')
-    if (sticker[hash] && sticker[hash].locked) throw '⚠️ No tienes permiso para cambiar este comando de Sticker'
+    if (sticker[hash] && sticker[hash].locked) throw '⚠️ You do not have permission to change this Sticker command'
     sticker[hash] = {
         text,
         mentionedJid: m.mentionedJid,
@@ -15,7 +15,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
         at: + new Date,
         locked: false,
     }
-    m.reply(`✅ Comando guardado`)
+    m.reply(`✅ Comand errrrrrr`)
 }
 
 
