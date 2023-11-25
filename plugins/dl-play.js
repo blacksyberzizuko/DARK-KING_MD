@@ -31,7 +31,11 @@ let handler = async (m, {
         let dla = "🧚‍♀️QUEEN-SAKURA-MD Downloading audio please wait"
         let dls = "🧚‍♀️ QUEEN-SAKURA-MD Downloading audio succes"
 
-        let captvid = `_*DOWNLOADING : ${title ? title : 'not know TITLE'} | DURATION : ${timestamp ? timestamp : 'not know'} | UPLOAD ON : ${ago ? ago : 'not know'} | CONNECT URL : ${url}*_`
+        let captvid = `_*QUEEN-SAKURA_MD-YOUTUBE-DOWNLOAD*_
+        _*DOWNLOADING : ${title ? title : 'not know TITLE'}*_
+        _*DURATION : ${timestamp ? timestamp : 'not know'}*_ 
+        _*UPLOAD ON : ${ago ? ago : 'not know'}*_
+        _*CONNECT URL : ${url}*_`
         let ytthumb = await (await conn.getFile(thumbnail)).data
         let msg = await generateWAMessageFromContent(m.chat, {
             extendedTextMessage: {
@@ -45,14 +49,14 @@ let handler = async (m, {
                         mediaType: 1,
                         mediaUrl: url,
                         renderLargerThumbnail: false,
-                        showAdAttribution: true,
+                        showAdAttribution: false,
                         sourceId: "queen sakura md",
                         sourceType: "PDF",
                         previewType: "PDF",
                         sourceUrl: url,
                         thumbnail: ytthumb,
                         thumbnailUrl: thumbnail,
-                        title: "*🧚‍♀️QUEEN-SAKURA-MD_2023🧚‍♀️*"
+                        title: "🧚‍♀️QUEEN-SAKURA-MD_2023🧚‍♀️"
                     }
                 }
             }
@@ -71,7 +75,7 @@ let handler = async (m, {
                 fileName: Ytdl.meta.title,
                 contextInfo: {
                     externalAdReply: {
-                        showAdAttribution: true,
+                        showAdAttribution: false,
                         mediaType: 1,
                         mediaUrl: url,
                         title: Ytdl.meta.title,
