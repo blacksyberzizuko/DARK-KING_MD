@@ -10,15 +10,18 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
  ✘ 『 𝗦𝗔𝗞𝗨𝗥𝗔-𝗙𝗕_𝗗𝗟 』 ✘
  
 *🎥THE VIDEO TITLE*
+
 🌀 *${result.title}*
+
 *FACEBOOK VIDEO DOWNLOADER*
 ┏━━━━━━━━━━━━━━━━━━⦂⦁
 ┃*🧚‍♂️QUEEN-SAKURA_MD🧚‍♂️*
 ┗━━━━━━━━━━━━━━━━━━⦂⦁`;
     conn.sendFile(m.chat, result.videoUrl, 'fb.mp4', tex, m);
+    m.react('♻')
     m.react(done);
   } catch (error) {
- 	m.reply('💔Error: link')
+ 	m.reply('Error: link')
  	} 
 }
 handler.help = ['facebook'].map(v => v + ' <url>')
