@@ -32,6 +32,6 @@ let handler = async(m, { conn, text, command }) => {
     }
 handler.help = ['alive']
 handler.tags = ['main']
-handler.command = ['alive', 'hi','Hi'] 
+handler.command = ['alive', 'hi','bot'] 
 
 export default handler
