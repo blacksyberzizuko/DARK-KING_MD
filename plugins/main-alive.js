@@ -19,7 +19,7 @@ let handler = async(m, { conn, text, usedPrefix, command }) => {
         contextInfo: {
           mentionedJid: [m.sender],
           externalAdReply: {
-          title: "THE QUEEN-SAKURA-MD ALIVE NOW YOU CAN USE QUEEN-SAKURA WHATSAPP-BOT",
+          title: "*⫹⫺  QUEEN-SAKURA_MD  ⫹⫺*\n\n⊹⩶⩶⩶⩶⩶⩶⩶⩶⩶⩶⩶⩶⊹\n*_🧚‍♀️QUEEN-SAKURA_MD COMANDS🧚‍♀️_*\n⊹⩶⩶⩶⩶⩶⩶⩶⩶⩶⩶⩶⩶⊹\n▢ .OWNERMENU\n▢ .DOWNLOADMENU\n▢ .SEARCHMENU\n▢ .TOOLMENU\n▢ .OTHERMENU\n▢ .BOTMENU\n⫹⫺⩶⩶⩶⩶⩶⩶⩶⩶⩶⩶⊶\n*THE MULTIDEVICE_WHATSAPP_BOT V01*\n⫹⫺⩶⩶⩶⩶⩶⩶⩶⩶⩶⩶⊶",
           body: "QUEEN-SAKURA",
           thumbnailUrl: img,
           sourceUrl: 'https://chat.whatsapp.com/FYPYqeucaxr4qwME8G6Tot',
