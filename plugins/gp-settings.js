@@ -1,4 +1,6 @@
 let handler = async (m, { conn, args, usedPrefix, command }) => {
+import fetch from 'node-fetch'
+let handler = async function (m, { conn, text }) {    
     let isClose = { // Switch Case Like :v
         'open': 'not_announcement',
         'close': 'announcement',
