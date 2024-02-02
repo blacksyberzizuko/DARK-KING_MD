@@ -42,17 +42,21 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   let speed = neww - old
   
 let infobt = `
-┏⚋⚋⚋⚋⚋❬ *INFO BOT* ❭⚋⚋⚋⚋❍
-┗⚋⚋⚋⚋⚋⚋⚋⚋⚋❍  
-👸 *BOT-INFORM* 👸
-🔖 *${groupsIn.length}* *CHAT-GROUPS*
-🔖 *${groupsIn.length}* *GROUPS*
-🔖 *${groupsIn.length - groupsIn.length}* *TOTAL*
-🔖 *${chats.length - groupsIn.length}* *PRIVATE-CHAT*
-🔖 *${chats.length}* *TOTAL-CHAT*
+┏━━━━━❬ *INFO BOT* ❭━━━━━━━━▢
+┃🤴𝐇𝐄𝐋𝐋𝐎 𝐔𝐒𝐄𝐑 𝐈𝐀𝐌 𝐃𝐀𝐑𝐊-𝐊𝐈𝐍𝐆_𝐌𝐃
+┃🤖𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐃 𝐁𝐘 =
+┗━━━━━━━━━━━━━━━━━━━━━━━━▢
+💬𝐃𝐀𝐑𝐊-𝐊𝐈𝐍𝐆_𝐌𝐃 𝐂𝐇𝐀𝐓 𝐈𝐍𝐅𝐎𝐑𝐌💬\n\n
+ *${groupsIn.length}* *CHAT-GROUPS*
+ *${groupsIn.length}* *GROUPS*
+ *${groupsIn.length - groupsIn.length}* *TOTAL*
+ *${chats.length - groupsIn.length}* *PRIVATE-CHAT*
+ *${chats.length}* *TOTAL-CHAT*
 
-👸 *CREATOR-OF-SAKURA* 👸
- 🎀 *DARK-LEGEND-HYPER*
+🧑‍💻𝗗𝗘𝗩𝗘𝗟𝗢𝗣𝗘𝗥_𝗧𝗘𝗔𝗠𝗦🧑‍💻\n\n
+Chib bro.... My Helper
+
+ 🎀 *DARK-HYPER*
 ⚡ *TELEGRAM :*
   🎀 https://t.me/DARK_LEGEND_HYPER
 🏷️ *WhatsApp :*
@@ -64,9 +68,9 @@ let infobt = `
   
 ┏⚋⚋❬👸 *QUEEN-SAKURA-TEAM* 👸❭⚋⚋❍
 ┗⚋⚋⚋⚋⚋⚋⚋⚋⚋⚋❍
-  🔱 *KINDALPHA.OFC*
-  🔱 *GAMING.SACHIYA*
-  🔱 *.....*
+  🔱
+  🔱 
+  🔱
 
 ┏⚋⚋⚋❬👸 *DEPLOYING-INFORM* 👸❭⚋⚋⚋❍
 ┗⚋⚋⚋⚋⚋⚋⚋⚋⚋⚋❍
@@ -82,6 +86,6 @@ m.reply(infobt)
 }
 handler.help = ['Sakura']
 handler.tags = ['main']
-handler.command = ['team', 'infobot', 'botinfo']
+handler.command = ['.', 'alive', 'bot']
 
 export default handler
