@@ -1,49 +1,53 @@
-import fetch from 'node-fetch'
-import { youtubedl } from '@bochilteam/scraper'
+import ytdl from 'ytdl-core'
+import fs from 'fs'
+import { pipeline } from 'stream'
+import { promisify } from 'util'
+import os from 'os'
 
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-	if (!args[0]) throw `Example: ${usedPrefix + command} https://youtu.be/S1--lhvwLsc`
-	if (!args[0].match(new RegExp(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch|v|embed|shorts)(?:\.php)?(?:\?.*v=|\/))([a-zA-Z0-9\_-]+)/, 'gi'))) return m.reply(`Invalid Youtube URL.`)
-	try {
-		let anu = await youtubedl(args[0])
-		m.react('🎶')
-		let data = anu.audio[Object.keys(anu.audio)[0]]
-		let url = await data.download()
-		if (data.fileSize > 400000) return m.reply(`Filesize: ${data.fileSizeH}\nUnable to send, maximum file size is 400 MB`)
-		await conn.sendFAudio(m.chat, { [/mp3/g.test(command) ? 'document' : 'audio']: { url: url }, mimetype: 'audio/mpeg', fileName: `${anu.title}.mp3` }, m, anu.title, anu.thumbnail, args[0])
-	} catch (e) {
-		console.log(e)
-		try {
-			let res = await fetch(`https://api.lolhuman.xyz/api/ytaudio?apikey=${apilol}&url=${args[0]}`)
-			let anu = await res.json()
-			anu = anu.result
-			let vsize = anu.link.size.slice(-2)
-			if (vsize == "GB") return m.reply(`No brain.\nWhere can I send videos ${anu.link.size}`)
-			if (!somematch(['kB','KB'], vsize) && parseInt(anu.link.size.replace(" MB", "")) > 400) return m.reply(`Filesize: ${anu.link.size}\nUnable to send, maximum file size is 400 MB`)
-			if (!anu.link.link) throw new Error('Error')
-			await conn.sendFAudio(m.chat, { [/mp3/g.test(command) ? 'document' : 'audio']: { url: anu.link.link }, mimetype: 'audio/mpeg', fileName: `${anu.title}.mp3` }, m, anu.title, anu.thumbnail, args[0])
-		} catch (e) {
-			console.log(e)
-			try {
-				let res = await fetch(`https://api.lolhuman.xyz/api/ytaudio2?apikey=${apilol}&url=${args[0]}`)
-				let anu = await res.json()
-				anu = anu.result
-				let vsize = anu.size.slice(-2)
-				if (vsize == "GB") return m.reply(`No brain.\nWhere can I send videos ${anu.size}`)
-				if (!somematch(['kB','KB'], vsize) && parseInt(anu.size.replace(" MB", "")) > 400) return m.reply(`Filesize: ${anu.size}\nUnable to send, maximum file size is 400 MB`)
-				if (!anu.link) throw new Error('Error')
-				await conn.sendFAudio(m.chat, { [/mp3/g.test(command) ? 'document' : 'audio']: { url: anu.link }, mimetype: 'audio/mpeg', fileName: `${anu.title}.mp3` }, m, anu.title, anu.thumbnail, args[0])
-			} catch (e) {
-				console.log(e)
-				throw `Invalid Youtube URL / there is an error.`
-			}
-		}
-	}
-}
+let streamPipeline = promisify(pipeline);
+let handler = async (m, { conn, command, text, usedPrefix }) => {
 
-handler.help = ['song <url>']
-handler.tags = ['dl']
-handler.command = ['song', 'play'] 
-handler.diamond = false
+  if (!text) throw `Usage: ${usedPrefix}${command} <YouTube Video URL>`;
+  let videoUrl = text;
+  let videoInfo = await ytdl.getInfo(videoUrl);
+  let { videoDetails } = videoInfo;
+  let { title, thumbnails, lengthSeconds, viewCount, uploadDate } = videoDetails;
+  let thumbnail = thumbnails[0].url;
+  let audioStream = ytdl(videoUrl, {
+    filter: 'audioonly',
+    quality: 'highestaudio',
+  });
+  let tmpDir = os.tmpdir();
+  let writableStream = fs.createWriteStream(`${tmpDir}/${title}.mp3`);
+  await streamPipeline(audioStream, writableStream);
+
+  let dl_url = `${tmpDir}/${title}.mp3`;
+  let info = `Title: ${title}\nLength: ${lengthSeconds}s\nViews: ${viewCount}\nUploaded: ${uploadDate}`;
+
+  await conn.sendMessage(m.chat, {
+    document: {
+      url: dl_url,
+    },
+    mimetype: 'audio/mpeg',
+    fileName: `${title}.mp3`,
+    caption: info,
+  }, { quoted: m });
+
+  fs.unlink(`${tmpDir}/${title}.mp3`, (err) => {
+    if (err) {
+      console.error(`Failed to delete audio file: ${err}`);
+    } else {
+      console.log(`Deleted audio file: ${tmpDir}/${title}.mp3`);
+    }
+  });
+};
+
+handler.help = ['ytmp3'].map((v) => v + ' <URL>')
+handler.tags = ['downloader']
+handler.command = /^(ytmp3)$/i
+
+handler.limit = true
+handler.register = true
+handler.exp = 0
 
 export default handler
