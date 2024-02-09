@@ -3,14 +3,14 @@ import util from 'util'
 import { performance } from 'perf_hooks'
 import { sizeFormatter } from 'human-readable'
 let format = sizeFormatter({
-  std: 'JEDEC', // 'SI' (default) | 'IEC' | 'JEDEC'
-  decimalPlaces: 2,
+  std: 'SI', // 'SI' (default) | 'IEC' | 'JEDEC'
+  decimalPlaces: 3,
   keepTrailingZeroes: false,
   render: (literal, symbol) => `${literal} ${symbol}B`,
 })
 let handler = async (m, { conn, usedPrefix, command }) => {
   const chats = Object.entries(conn.chats).filter(([id, data]) => id && data.isChats)
-  const groupsIn = chats.filter(([id]) => id.endsWith('@g.us')) //groups.filter(v => !v.read_only)
+  const groupsIn = chats.filter(([id]) => id.endsWith('@94770378874g.us')) //groups.filter(v => !v.read_only)
   const used = process.memoryUsage()
   const cpus = _cpus().map(cpu => {
     cpu.total = Object.keys(cpu.times).reduce((last, type) => last + cpu.times[type], 0)
@@ -86,6 +86,7 @@ m.reply(infobt)
 }
 handler.help = ['Sakura']
 handler.tags = ['main']
+handler.register = true
 handler.command = ['.', 'alive', 'bot']
 
 export default handler
