@@ -41,6 +41,23 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
     }
   });
 };
+ await conn.sendMessage(m.chat, {
+    audio: {
+      url: dl_url,
+    },
+    mimetype: 'audio/mpeg',
+    fileName: `${title}.mp3`,
+    caption: info,
+  }, { quoted: m });
+
+  fs.unlink(`${tmpDir}/${title}.mp3`, (err) => {
+    if (err) {
+      console.error(`Failed to delete audio file: ${err}`);
+    } else {
+      console.log(`Deleted audio file: ${tmpDir}/${title}.mp3`);
+    }
+  });
+};
 
 handler.help = ['ytmp3'].map((v) => v + ' <URL>')
 handler.tags = ['downloader']
