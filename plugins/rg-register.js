@@ -4,8 +4,8 @@ let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i
 let handler = async function (m, { conn, text, usedPrefix, command }) {
   let user = global.db.data.users[m.sender]
   let name2 = conn.getName(m.sender)
-  if (user.registered === true) throw `✳️ Ya estás registrado\n\n¿Quiere volver a registrarse?\n\n 📌 Use este comando para eliminar su registro \n*${usedPrefix}unreg* <Número de serie>`
-  if (!Reg.test(text)) throw `⚠️ Formato incorrecto\n\n ✳️ Uso del comamdo: *${usedPrefix + command} nombre.edad*\n📌Ejemplo : *${usedPrefix + command}* ${name2}.16`
+  if (user.registered === true) throw `please register now\n\n after you can use bot \n*${usedPrefix}`
+  if (!Reg.test(text)) throw `⚠️ Formato incorrect\n\n ✳️ use this command: *${usedPrefix + command} your name .your age\n📌Ejemplo : *${usedPrefix + command}* dark-king.18`
   let [_, name, splitter, age] = text.match(Reg)
   if (!name) throw '👸 WHATS YOU R NAME'
   if (!age) throw '👸 HOW OLD ARE YOU'
@@ -17,16 +17,19 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
   user.age = age
   user.regTime = + new Date
   user.registered = true
+  m.react('🎫')
   let sn = createHash('md5').update(m.sender).digest('hex')
   m.reply(`
-┏⚋⚋⚋❬ *REGISTER* ❭⚋⚋❍
-🔖 *NAME :* ${name}
-🔖 *AGE* : ${age} años
-🔖 *NUMBER SN* :
+*👨‍💻DARK-KING_MD_USER_BOT*
+*🎫YOUR REGISTER PLASE*
+⫍⫢⩶⩶⩶⩶⩶⩶
+|🔖 *NAME :* ${name}
+|🔖 *AGE* : ${age} 
+|🔖 *NUMBER SN* :
 ${sn}
 └──────────────
 
- *${usedPrefix}help* para ver el Menu
+ *${usedPrefix} AND NOW YOU CAN USE THIS BOT PLEASE TYPE TO .MENU
 `.trim())
 }
 handler.help = ['reg'].map(v => v + ' <nombre.edad>')
